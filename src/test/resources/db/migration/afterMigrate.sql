@@ -11,3 +11,6 @@ INSERT INTO product (store_id, name, description, sku, price) VALUES (1, 'Produc
 INSERT INTO product (store_id, name, description, sku, price) VALUES (1, 'Product Two', 'Description of the product Two', 'ABC12', 175.99);
 INSERT INTO product (store_id, name, description, sku, price) VALUES (1, 'Product Three', 'Description of the product Three', 'CFC12', 115.29);
 INSERT INTO product (store_id, name, description, sku, price) VALUES (1, 'Product to be deleted', 'Description of the product to be deleted', 'ABC13', 30.55);
+
+-- Stock
+INSERT INTO stock (product_id, stock_count) VALUES (2, 7)
