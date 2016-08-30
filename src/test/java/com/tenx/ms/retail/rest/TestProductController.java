@@ -106,7 +106,7 @@ public class TestProductController extends AbstractIntegrationTest {
             });
 
             Long productId = resourceResult.getId();
-            assertThat("New product id not match", productId, is(5L));
+            assertThat("New product id not match", productId, is(7L));
 
         } catch (IOException e) {
             fail(e.getMessage());
@@ -202,7 +202,7 @@ public class TestProductController extends AbstractIntegrationTest {
     @Test
     public void deleteProduct() {
 
-        Long productId = 3L;
+        Long productId = 4L;
 
         ResponseEntity<String> response = getJSONResponse(template, String.format(REQUEST_URI, basePath()) + "/" + productId, null, HttpMethod.DELETE);
         assertEquals("HTTP Status code incorrect", HttpStatus.NO_CONTENT, response.getStatusCode());
