@@ -55,7 +55,7 @@ public class    OrderControllerTest extends AbstractIntegrationTest {
         order.setLastName("Parker");
         order.setStoreId(1L);
         order.setEmail("pparker@marvel.com");
-        order.setPhone("1234567890");
+        order.setPhone("3051234567");
 
         List<OrderItem> items = new ArrayList<>();
         items.add(new OrderItem(5L, 1L));
@@ -98,7 +98,7 @@ public class    OrderControllerTest extends AbstractIntegrationTest {
         order.setLastName("Parker");
         order.setStoreId(1L);
         order.setEmail("pparker@marvel.com");
-        order.setPhone("1234567890");
+        order.setPhone("3051234567");
 
         List<OrderItem> items = new ArrayList<>();
         items.add(new OrderItem(INVALID_PRODUCT_ID, 1L));

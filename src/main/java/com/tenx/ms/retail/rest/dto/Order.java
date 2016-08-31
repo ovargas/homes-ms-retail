@@ -1,6 +1,7 @@
 package com.tenx.ms.retail.rest.dto;
 
 import com.tenx.ms.commons.validation.constraints.Email;
+import com.tenx.ms.commons.validation.constraints.PhoneNumber;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
@@ -33,7 +34,7 @@ public class Order {
     private String email;
 
     @ApiModelProperty(value = "Purchaser phone number", required = true)
-    @Pattern(regexp = "^[0-9]{10}$", message = "Phone number must be 10 digits")
+    @PhoneNumber
     @Valid
     private String phone;
 

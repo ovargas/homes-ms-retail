@@ -33,7 +33,7 @@ CREATE TABLE purchase_order(
     first_name VARCHAR(50)NOT NULL COMMENT 'Purchaser first name',
     last_name VARCHAR(50)NOT NULL COMMENT 'Purchaser last name',
     email VARCHAR(50)NOT NULL COMMENT 'Purchaser email',
-    phone VARCHAR(10)NOT NULL COMMENT 'Purchaser phone number',
+    phone VARCHAR(20)NOT NULL COMMENT 'Purchaser phone number',
     order_date DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'order date/time',
     status VARCHAR(7) NOT NULL COMMENT 'Order status',
     FOREIGN KEY (store_id) REFERENCES store (store_id),
