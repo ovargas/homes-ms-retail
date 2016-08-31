@@ -11,6 +11,10 @@
 management.security.enabled: false
 security.basic.enabled: false
 
+
+dbhost: 127.0.0.1
+dbport: 11990
+
 server:
   port: 9990
   contextPath: /retail
@@ -19,4 +23,16 @@ server:
 ---
 spring:
   profiles: dev
+  cloud:
+    discovery:
+        enabled: false
+  jpa:
+    show-sql: true
+    hibernate:
+        ddl-auto: update
+  datasource:
+    url: jdbc:mysql://${dbhost}:${dbport}/sspms_retail?tinyInt1isBit=false&userSSL=false
+    username: root
+    password: tenxdev
+    driver-class-name: com.mysql.jdbc.Driver
 

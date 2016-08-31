@@ -34,7 +34,7 @@ import static org.junit.Assert.fail;
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(classes = RetailServiceApp.class)
 @ActiveProfiles(Profiles.TEST_NOAUTH)
-public class TestOrderController extends AbstractIntegrationTest {
+public class OrderControllerTest extends AbstractIntegrationTest {
 
     private final RestTemplate template = new TestRestTemplate();
     private final String API_VERSION = RestConstants.VERSION_ONE;
@@ -45,7 +45,7 @@ public class TestOrderController extends AbstractIntegrationTest {
     private ObjectMapper mapper;
 
     @Test
-    public void createNewOrder() {
+    public void testCreateNewOrder() {
 
         Long storeId = 1L;
         Order order = new Order();
@@ -88,7 +88,7 @@ public class TestOrderController extends AbstractIntegrationTest {
     }
 
     @Test
-    public void createNewOrderNotFoundInvalidStock() {
+    public void testCreateNewOrderNotFoundInvalidStock() {
 
         Long storeId = 1L;
         Order order = new Order();
@@ -117,7 +117,7 @@ public class TestOrderController extends AbstractIntegrationTest {
 
 
     @Test
-    public void createNewOrderFailInsufficientStock() {
+    public void testCreateNewOrderFailInsufficientStock() {
 
         Long storeId = 1L;
         Order order = new Order();
@@ -145,7 +145,7 @@ public class TestOrderController extends AbstractIntegrationTest {
     }
 
     @Test
-    public void createNewOrderValidationErrors() {
+    public void testCreateNewOrderValidationErrors() {
 
         Long storeId = 1L;
         Order order = new Order();

@@ -29,7 +29,7 @@ import static org.junit.Assert.fail;
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(classes = RetailServiceApp.class)
 @ActiveProfiles(Profiles.TEST_NOAUTH)
-public class TestStockController extends AbstractIntegrationTest {
+public class StockControllerTest extends AbstractIntegrationTest {
 
 
     private final RestTemplate template = new TestRestTemplate();
@@ -43,7 +43,7 @@ public class TestStockController extends AbstractIntegrationTest {
 
 
     @Test
-    public void getStockById() {
+    public void testGetStockById() {
 
         Long productId = 2L;
         Long storeId = 1L;
@@ -56,7 +56,7 @@ public class TestStockController extends AbstractIntegrationTest {
     }
 
     @Test
-    public void getStockNotfoundInvalidStoreId() {
+    public void testGetStockNotfoundInvalidStoreId() {
 
         Long productId = 2L;
 
@@ -65,7 +65,7 @@ public class TestStockController extends AbstractIntegrationTest {
     }
 
     @Test
-    public void getStockNotfoundInvalidProductId() {
+    public void testGetStockNotfoundInvalidProductId() {
 
         Long storeId = 1L;
 
@@ -74,14 +74,14 @@ public class TestStockController extends AbstractIntegrationTest {
     }
 
     @Test
-    public void getStockNotfoundInvalidStoreIdAndProductId() {
+    public void testGetStockNotfoundInvalidStoreIdAndProductId() {
 
         ResponseEntity<String> response = getJSONResponse(template, String.format(REQUEST_URI, basePath()) + "/" + INVALID_STORE_ID + "/" + INVALID_PRODUCT_ID, null, HttpMethod.GET);
         assertEquals("HTTP Status code incorrect", HttpStatus.NOT_FOUND, response.getStatusCode());
     }
 
     @Test
-    public void updateStock() {
+    public void testUpdateStock() {
 
         Long storeId = 1L;
         Long productId = 1L;
@@ -106,7 +106,7 @@ public class TestStockController extends AbstractIntegrationTest {
     }
 
     @Test
-    public void updateStockValidationError() {
+    public void testUpdateStockValidationError() {
 
         Long storeId = 1L;
         Long productId = 1L;

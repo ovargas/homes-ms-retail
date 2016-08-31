@@ -34,7 +34,7 @@ import static org.junit.Assert.fail;
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(classes = RetailServiceApp.class)
 @ActiveProfiles(Profiles.TEST_NOAUTH)
-public class TestStoreController extends AbstractIntegrationTest {
+public class StoreControllerTest extends AbstractIntegrationTest {
 
 
     private final RestTemplate template = new TestRestTemplate();
@@ -46,7 +46,7 @@ public class TestStoreController extends AbstractIntegrationTest {
     private ObjectMapper mapper;
 
     @Test
-    public void getStoreById() {
+    public void testGetStoreById() {
 
         Long storeId = 1L;
 
@@ -57,7 +57,7 @@ public class TestStoreController extends AbstractIntegrationTest {
     }
 
     @Test
-    public void getStoreByIdNotfound() {
+    public void testGetStoreByIdNotfound() {
 
         Long storeId = INVALID_STORE_ID;
         ResponseEntity<String> response = getJSONResponse(template, String.format(REQUEST_URI, basePath()) + storeId, null, HttpMethod.GET);
@@ -65,7 +65,7 @@ public class TestStoreController extends AbstractIntegrationTest {
     }
 
     @Test
-    public void getStores() {
+    public void testGetStores() {
         try {
 
             ResponseEntity<String> response = getJSONResponse(template, String.format(REQUEST_URI, basePath()), null, HttpMethod.GET);
@@ -84,7 +84,7 @@ public class TestStoreController extends AbstractIntegrationTest {
     }
 
     @Test
-    public void createStore() {
+    public void testCreateStore() {
 
         Store store = new Store();
         store.setName("Store created");
@@ -108,7 +108,7 @@ public class TestStoreController extends AbstractIntegrationTest {
     }
 
     @Test
-    public void updateStore() {
+    public void testUpdateStore() {
 
         Store store = new Store();
         store.setName("Store Updated");
@@ -129,7 +129,7 @@ public class TestStoreController extends AbstractIntegrationTest {
     }
 
     @Test
-    public void updateStoreNotFound() {
+    public void testUpdateStoreNotFound() {
         Store store = new Store();
         store.setName("Store Updated");
         Long storeId = INVALID_STORE_ID;
@@ -146,7 +146,7 @@ public class TestStoreController extends AbstractIntegrationTest {
     }
 
     @Test
-    public void deleteStore() {
+    public void testDeleteStore() {
 
         Long storeId = 3L;
 
@@ -156,7 +156,7 @@ public class TestStoreController extends AbstractIntegrationTest {
     }
 
     @Test
-    public void deleteStoreNotFound() {
+    public void testDeleteStoreNotFound() {
 
         Long storeId = INVALID_STORE_ID;
 
