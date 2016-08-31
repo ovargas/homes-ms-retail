@@ -36,7 +36,7 @@ import static org.junit.Assert.fail;
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(classes = RetailServiceApp.class)
 @ActiveProfiles(Profiles.TEST_NOAUTH)
-public class TestProductController extends AbstractIntegrationTest {
+public class ProductControllerTest extends AbstractIntegrationTest {
 
 
     private final RestTemplate template = new TestRestTemplate();
@@ -48,7 +48,7 @@ public class TestProductController extends AbstractIntegrationTest {
     private ObjectMapper mapper;
 
     @Test
-    public void getProductById() {
+    public void testGetProductById() {
 
         Long productId = 1L;
 
@@ -59,7 +59,7 @@ public class TestProductController extends AbstractIntegrationTest {
     }
 
     @Test
-    public void getProductByIdNotfound() {
+    public void testGetProductByIdNotfound() {
 
         Long productId = INVALID_PRODUCT_ID;
         ResponseEntity<String> response = getJSONResponse(template, String.format(REQUEST_URI, basePath()) + productId, null, HttpMethod.GET);
@@ -67,7 +67,7 @@ public class TestProductController extends AbstractIntegrationTest {
     }
 
     @Test
-    public void getProducts() {
+    public void testGetProducts() {
         try {
 
             ResponseEntity<String> response = getJSONResponse(template, String.format(REQUEST_URI, basePath()), null, HttpMethod.GET);
@@ -86,7 +86,7 @@ public class TestProductController extends AbstractIntegrationTest {
     }
 
     @Test
-    public void createProduct() {
+    public void testCreateProduct() {
 
         Product product = new Product();
         product.setName("Product created");
@@ -114,7 +114,7 @@ public class TestProductController extends AbstractIntegrationTest {
     }
 
     @Test
-    public void createProductValidationError() {
+    public void testCreateProductValidationError() {
 
         Product product = new Product();
         product.setName("Product created");
@@ -142,7 +142,7 @@ public class TestProductController extends AbstractIntegrationTest {
     }
 
     @Test
-    public void updateProduct() {
+    public void testUpdateProduct() {
 
         Product product = new Product();
         product.setName("Product Updated");
@@ -163,7 +163,7 @@ public class TestProductController extends AbstractIntegrationTest {
     }
 
     @Test
-    public void updateProductValidationError() {
+    public void testUpdateProductValidationError() {
 
         Product product = new Product();
         product.setName("Product Updated");
@@ -183,7 +183,7 @@ public class TestProductController extends AbstractIntegrationTest {
     }
 
     @Test
-    public void updateProductNotFound() {
+    public void testUpdateProductNotFound() {
         Product product = new Product();
         product.setName("Product Updated");
         Long productId = INVALID_PRODUCT_ID;
@@ -200,7 +200,7 @@ public class TestProductController extends AbstractIntegrationTest {
     }
 
     @Test
-    public void deleteProduct() {
+    public void testDeleteProduct() {
 
         Long productId = 4L;
 
@@ -210,7 +210,7 @@ public class TestProductController extends AbstractIntegrationTest {
     }
 
     @Test
-    public void deleteProductNotFound() {
+    public void testDeleteProductNotFound() {
 
         Long productId = INVALID_PRODUCT_ID;
 
