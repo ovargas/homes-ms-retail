@@ -15,12 +15,16 @@ CREATE TABLE product (
     PRIMARY KEY (product_id)
 );
 
+CREATE INDEX product_fk_store_id ON product (product_id);
+
 CREATE TABLE stock (
     product_id BIGINT NOT NULL COMMENT 'The id of the product',
     stock_count BIGINT NOT NULL COMMENT 'Total count in stock',
     FOREIGN KEY (product_id) REFERENCES product (product_id),
     PRIMARY KEY (product_id)
 );
+
+CREATE INDEX stock_fk_product_id ON stock (product_id);
 
 CREATE TABLE purchase_order(
 
@@ -36,6 +40,8 @@ CREATE TABLE purchase_order(
     PRIMARY KEY (order_id)
 );
 
+CREATE INDEX purchase_order_fk_store_id ON purchase_order (store_id);
+
 CREATE TABLE purchase_order_item(
 
     order_item_id BIGINT NOT NULL AUTO_INCREMENT,
@@ -46,4 +52,7 @@ CREATE TABLE purchase_order_item(
     FOREIGN KEY (product_id) REFERENCES product (product_id),
     PRIMARY KEY (order_item_id),
     UNIQUE (order_id, product_id)
-)
+);
+
+CREATE INDEX purchase_order_item_fk_order_id ON purchase_order_item (order_id);
+CREATE INDEX purchase_order_item_fk_product_id ON purchase_order_item (product_id);
