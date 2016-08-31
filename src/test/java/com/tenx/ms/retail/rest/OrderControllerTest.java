@@ -23,6 +23,7 @@ import org.springframework.web.client.RestTemplate;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 
 import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertEquals;
@@ -34,7 +35,7 @@ import static org.junit.Assert.fail;
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(classes = RetailServiceApp.class)
 @ActiveProfiles(Profiles.TEST_NOAUTH)
-public class OrderControllerTest extends AbstractIntegrationTest {
+public class    OrderControllerTest extends AbstractIntegrationTest {
 
     private final RestTemplate template = new TestRestTemplate();
     private final String API_VERSION = RestConstants.VERSION_ONE;
@@ -56,7 +57,7 @@ public class OrderControllerTest extends AbstractIntegrationTest {
         order.setEmail("pparker@marvel.com");
         order.setPhone("1234567890");
 
-        ArrayList<OrderItem> items = new ArrayList<>();
+        List<OrderItem> items = new ArrayList<>();
         items.add(new OrderItem(5L, 1L));
         items.add(new OrderItem(6L, 1L));
 
@@ -99,7 +100,7 @@ public class OrderControllerTest extends AbstractIntegrationTest {
         order.setEmail("pparker@marvel.com");
         order.setPhone("1234567890");
 
-        ArrayList<OrderItem> items = new ArrayList<>();
+        List<OrderItem> items = new ArrayList<>();
         items.add(new OrderItem(INVALID_PRODUCT_ID, 1L));
 
         order.setProducts(items);
@@ -128,7 +129,7 @@ public class OrderControllerTest extends AbstractIntegrationTest {
         order.setEmail("pparker@marvel.com");
         order.setPhone("1234567890");
 
-        ArrayList<OrderItem> items = new ArrayList<>();
+        List<OrderItem> items = new ArrayList<>();
         items.add(new OrderItem(6L, 100L));
 
         order.setProducts(items);
