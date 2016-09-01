@@ -1,8 +1,8 @@
 package com.tenx.ms.retail.order.rest;
 
 import com.tenx.ms.commons.rest.RestConstants;
-import com.tenx.ms.retail.order.rest.dto.Order;
 import com.tenx.ms.retail.order.exceptions.ValidationException;
+import com.tenx.ms.retail.order.rest.dto.Order;
 import com.tenx.ms.retail.order.rest.dto.OrderResult;
 import com.tenx.ms.retail.order.services.OrderService;
 import io.swagger.annotations.Api;

@@ -35,7 +35,7 @@ import static org.junit.Assert.fail;
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(classes = RetailServiceApp.class)
 @ActiveProfiles(Profiles.TEST_NOAUTH)
-public class    OrderControllerTest extends AbstractIntegrationTest {
+public class OrderControllerTest extends AbstractIntegrationTest {
 
     private final RestTemplate template = new TestRestTemplate();
     private final String API_VERSION = RestConstants.VERSION_ONE;
@@ -74,7 +74,7 @@ public class    OrderControllerTest extends AbstractIntegrationTest {
 
             OrderResult result = mapper.readValue(responseBody, OrderResult.class);
 
-            assertNotNull("Result shouldn't be null",result);
+            assertNotNull("Result shouldn't be null", result);
 
             Long orderId = result.getOrderId();
             String status = result.getStatus();

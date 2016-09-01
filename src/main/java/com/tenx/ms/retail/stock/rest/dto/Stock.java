@@ -10,9 +10,10 @@ import javax.validation.constraints.Min;
 @ApiModel("stock")
 public class Stock {
 
-    public Stock(){}
+    public Stock() {
+    }
 
-    public Stock(Long productId, Long storeId, Long count){
+    public Stock(Long productId, Long storeId, Long count) {
 
         this.productId = productId;
         this.storeId = storeId;

@@ -1,10 +1,10 @@
 package com.tenx.ms.retail.stock.services;
 
 
-import com.tenx.ms.retail.stock.converter.StockConverter;
-import com.tenx.ms.retail.product.services.ProductService;
-import com.tenx.ms.retail.stock.repositories.StockRepository;
 import com.tenx.ms.retail.product.rest.dto.Product;
+import com.tenx.ms.retail.product.services.ProductService;
+import com.tenx.ms.retail.stock.converter.StockConverter;
+import com.tenx.ms.retail.stock.repositories.StockRepository;
 import com.tenx.ms.retail.stock.rest.dto.Stock;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

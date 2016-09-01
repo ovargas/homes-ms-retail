@@ -2,8 +2,8 @@ package com.tenx.ms.retail.order.converter;
 
 
 import com.tenx.ms.retail.order.domain.OrderEntity;
-import com.tenx.ms.retail.store.domain.StoreEntity;
 import com.tenx.ms.retail.order.rest.dto.Order;
+import com.tenx.ms.retail.store.domain.StoreEntity;
 
 public final class OrderConverter {
 

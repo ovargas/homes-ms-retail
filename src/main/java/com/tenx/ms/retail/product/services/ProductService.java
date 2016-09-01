@@ -40,16 +40,16 @@ public class ProductService {
         if (entity != null) {
             ProductEntity productToUpdate = dtoToEntity(product);
 
-            if(productToUpdate.getName() == null){
+            if (productToUpdate.getName() == null) {
                 productToUpdate.setName(entity.getName());
             }
-            if(productToUpdate.getDescription() == null){
+            if (productToUpdate.getDescription() == null) {
                 productToUpdate.setDescription(entity.getDescription());
             }
-            if(productToUpdate.getSku() == null){
+            if (productToUpdate.getSku() == null) {
                 productToUpdate.setSku(entity.getSku());
             }
-            if(productToUpdate.getPrice() == null){
+            if (productToUpdate.getPrice() == null) {
                 productToUpdate.setPrice(entity.getPrice());
             }
 
