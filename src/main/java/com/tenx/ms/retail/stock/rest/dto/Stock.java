@@ -10,6 +10,15 @@ import javax.validation.constraints.Min;
 @ApiModel("stock")
 public class Stock {
 
+    @ApiModelProperty(value = "Product Id", required = true)
+    private Long productId;
+    @ApiModelProperty(value = "Store Id", required = true)
+    private Long storeId;
+    @ApiModelProperty(value = "Total count in stock", required = true)
+    @Min(value = 0)
+    @Valid
+    private Long count;
+
     public Stock() {
     }
 
@@ -19,17 +28,6 @@ public class Stock {
         this.storeId = storeId;
         this.count = count;
     }
-
-    @ApiModelProperty(value = "Product Id", required = true)
-    private Long productId;
-
-    @ApiModelProperty(value = "Store Id", required = true)
-    private Long storeId;
-
-    @ApiModelProperty(value = "Total count in stock", required = true)
-    @Min(value = 0)
-    @Valid
-    private Long count;
 
     public Long getProductId() {
         return productId;

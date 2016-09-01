@@ -19,7 +19,7 @@ public final class OrderConverter {
         dto.setLastName(entity.getLastName());
         dto.setEmail(entity.getEmail());
         dto.setPhone(entity.getPhone());
-        dto.setOrderDate(entity.getOrderDate());
+        dto.setOrderDate(entity.getOrderDate().toLocalDateTime());
         dto.setStatus(entity.getStatus());
 
         return dto;

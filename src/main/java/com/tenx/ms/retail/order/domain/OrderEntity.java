@@ -11,7 +11,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-import java.util.Date;
+import java.sql.Timestamp;
 
 @Entity
 @Table(name = "purchase_order")
@@ -42,7 +42,7 @@ public class OrderEntity {
     private String status;
 
     @Column(name = "order_date", nullable = false)
-    private Date orderDate;
+    private Timestamp orderDate;
 
     public Long getOrderId() {
         return orderId;
@@ -100,11 +100,11 @@ public class OrderEntity {
         this.status = status;
     }
 
-    public Date getOrderDate() {
+    public Timestamp getOrderDate() {
         return orderDate;
     }
 
-    public void setOrderDate(Date orderDate) {
+    public void setOrderDate(Timestamp orderDate) {
         this.orderDate = orderDate;
     }
 }
