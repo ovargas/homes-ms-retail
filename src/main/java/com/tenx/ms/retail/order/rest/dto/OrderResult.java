@@ -9,7 +9,8 @@ import io.swagger.annotations.ApiModelProperty;
 @ApiModel("OrderResult")
 public class OrderResult {
 
-    public OrderResult() {}
+    public OrderResult() {
+    }
 
     public OrderResult(Long orderId, String status) {
 

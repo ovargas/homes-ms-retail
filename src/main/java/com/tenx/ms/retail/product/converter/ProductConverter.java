@@ -2,8 +2,8 @@ package com.tenx.ms.retail.product.converter;
 
 
 import com.tenx.ms.retail.product.domain.ProductEntity;
-import com.tenx.ms.retail.store.domain.StoreEntity;
 import com.tenx.ms.retail.product.rest.dto.Product;
+import com.tenx.ms.retail.store.domain.StoreEntity;
 
 public final class ProductConverter {
 
