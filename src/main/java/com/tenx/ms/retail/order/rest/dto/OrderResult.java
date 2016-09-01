@@ -9,6 +9,12 @@ import io.swagger.annotations.ApiModelProperty;
 @ApiModel("OrderResult")
 public class OrderResult {
 
+    @ApiModelProperty(value = "Order Id")
+    private Long orderId;
+    @ApiModelProperty(value = "Order status")
+    @EnumValid(enumClass = OrderStatus.class)
+    private String status;
+
     public OrderResult() {
     }
 
@@ -17,13 +23,6 @@ public class OrderResult {
         this.orderId = orderId;
         this.status = status;
     }
-
-    @ApiModelProperty(value = "Order Id")
-    private Long orderId;
-
-    @ApiModelProperty(value = "Order status")
-    @EnumValid(enumClass = OrderStatus.class)
-    private String status;
 
     public Long getOrderId() {
         return orderId;

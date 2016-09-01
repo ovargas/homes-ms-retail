@@ -8,22 +8,21 @@ import javax.validation.constraints.Min;
 @ApiModel("OrderProduct")
 public class OrderItem {
 
+    @ApiModelProperty(value = "Product Id", required = true)
+    private Long productId;
+    @ApiModelProperty(value = "Product count", required = true)
+    @Min(value = 1)
+    private Long count;
+
     public OrderItem() {
 
     }
+
 
     public OrderItem(Long productId, long count) {
         this.productId = productId;
         this.count = count;
     }
-
-    @ApiModelProperty(value = "Product Id", required = true)
-    private Long productId;
-
-
-    @ApiModelProperty(value = "Product count", required = true)
-    @Min(value = 1)
-    private Long count;
 
     public Long getProductId() {
         return productId;

@@ -32,12 +32,11 @@ import static org.junit.Assert.fail;
 public class StockControllerTest extends AbstractIntegrationTest {
 
 
+    private static final Long INVALID_STORE_ID = 99999999L;
+    private static final Long INVALID_PRODUCT_ID = 99999999L;
     private final RestTemplate template = new TestRestTemplate();
     private final String API_VERSION = RestConstants.VERSION_ONE;
     private final String REQUEST_URI = "%s" + API_VERSION + "/stock/";
-    private static final Long INVALID_STORE_ID = 99999999L;
-    private static final Long INVALID_PRODUCT_ID = 99999999L;
-
     @Autowired
     private ObjectMapper mapper;
 
